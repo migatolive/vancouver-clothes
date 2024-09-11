@@ -9,7 +9,7 @@ $user = $_ENV['DB_USER'];
 $pass = $_ENV['DB_PASS'];
 $name = $_ENV['DB_NAME'];
 
-$conn_string = "host=$host dbname=$name user=$user password=$pass";
+$conn_string = "host=$host dbname=$name user=$user password=$pass options='--search_path=vancouver'";
 $conn = pg_connect($conn_string);
 
 if (!$conn) {

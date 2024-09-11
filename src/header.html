@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    <script src="./scripts/post.js"></script>
+    <style>
+        .current-page {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="nav-link" data-page="index.html">Inicio</a></li>
+            <li><a href="products.html" class="nav-link" data-page="products.html">Productos</a></li>
+            <li><a href="register.html" class="nav-link" data-page="register.html">Registrarse</a></li>
+            <li><a href="login.html" class="nav-link" data-page="login.html">Iniciar Sesión</a></li>
+            <li><a href="cart.html" class="nav-link" data-page="cart.html">Carrito</a></li>
+            <li><button class="logout">Cerrar Sesión</button></li>
+        </ul>
+    </nav>
+</header>
+<script>
+    $(document).ready(function() {
+        const currentPage = window.location.pathname.split('/').pop();
+        $(`.nav-link[data-page="${currentPage}"]`).addClass('current-page');
+    });
+</script>
+</body>
+</html>

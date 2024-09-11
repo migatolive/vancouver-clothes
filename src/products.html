@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    <script src="./scripts/product.js"></script>
+    <script src="./scripts/cart.js"></script>
+    <script>
+        $(function() {
+            $("#header").load("header.html");
+        });
+    </script>
+</head>
+<body>
+<div id="header"></div>
+<h1>Lista de Productos</h1>
+<div id="productList">
+    <!-- Los productos se cargarán aquí -->
+</div>
+<h2>Crear Producto</h2>
+<form id="productForm">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="price">Precio:</label>
+    <input type="number" id="price" name="price" required>
+    <button type="submit">Crear Producto</button>
+</form>
+<div id="errorMessage" style="color: red;"></div>
+<div id="productMessage" style="color: green;"></div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito de Compras</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="./scripts/cart.js"></script>
+    <script src="./scripts/checkout.js"></script>
+    <script>
+        $(function() {
+            $("#header").load("header.html");
+        });
+    </script>
+</head>
+<body>
+<div id="header"></div>
+<h1>Carrito de Compras</h1>
+<div id="cart">
+    <table>
+        <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Total</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody id="cartItems">
+        <!-- Los items del carrito se cargarán aquí -->
+        </tbody>
+    </table>
+</div>
+<div id="cartTotal">
+    <h2>Total: $<span id="totalAmount">0.00</span></h2>
+    <button id="checkoutButton" class="hidden">Proceder al Pago</button>
+</div>
+<div id="paymentForm" style="display:none;">
+    <h2>Información de Pago</h2>
+    <form>
+        <div id="card-element"></div> <br>
+        <div id="address-element"></div>
+        <button type="submit">
+            Pagar
+        </button>
+        <div id="payment-message" class="hidden"></div>
+    </form>
+</div>
+</body>
+</html>
